@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import "../css/account.css";
+import "../css/form.css";
+
+
+
 function Account() {
-
-
-    // const centerStyle = {
-    //     textAlign: 'center'
-    // };
 
     return (
         <div className="middle">
@@ -33,174 +33,57 @@ function Account() {
                 </div>
             </div>
 
-            <div className="second-middle-content">
+            <div className="account-middle-content">
 
-                <div className="first-row">
+                <div className="general-info">
+                    <span>General Information</span>
+                    <span><button>Edit</button></span>
+                </div>
 
-                    <div className="top-discussion-box">
-                        <div className="picture"> <img src="" alt="" /></div>
-                        <div className="discussion-container">
-                            <div className="id-box">
-                                <span>ID: 1234 </span>
-                                <span className="icon">
-                                    <ion-icon name="refresh-circle-outline"></ion-icon>
-                                    <ion-icon name="duplicate-outline"></ion-icon>
-                                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                                </span>
-                            </div>
-                            <div className="discussion"> UX Group Discussion</div>
-                        </div>
-                    </div>
-
-                    <div className="meeting-box">
-                        <div className="meeting-pic-box">
-                           <img className="meeting-pic" src="" alt="" />
-                           <img className="meeting-pic" src="" alt="" />
-                           <img className="meeting-pic" src="" alt="" />
-                        </div>
-                           
-                        <div className="upcoming-meeting">
-                            <span>Upcoming meetings</span>
-                            <span><ion-icon name="chevron-up-outline"></ion-icon></span>
-                        </div>
-
-                    </div>
-
-                    <div className="strategy-box">
-                        <div className="date">
-                            <span>12th Dec, 2023</span>
-                            <span>2.00PM - 4.00PM</span>
-                        </div>
-
-                        <div className="strategy-name">
-                            Quaterly Sales Stategy Review
-                        </div>
-                    </div>
-
-                    <div className="join-box">
-                        <button> <Link to="/custom">Join Room</Link> </button>
+                <div className="display-pic">
+                    <img src="" alt="" className='picture' />
+                    <div className="inputbox-details">
+                        <label htmlFor="display name"> Display Name </label>
+                        <input type="text" name="email" placeholder="Add a display Name" required />
                     </div>
                 </div>
 
-                <div className="first-row">
 
-                    <div className="top-discussion-box">
-                        <div className="picture"> <img src="" alt="" /></div>
-                        <div className="discussion-container">
-                            <div className="id-box">
-                                <span>ID: 1234 </span>
-                                <span className="icon">
-                                    <ion-icon name="refresh-circle-outline"></ion-icon>
-                                    <ion-icon name="duplicate-outline"></ion-icon>
-                                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                                </span>
-                            </div>
-                            <div className="discussion"> UX Group Discussion</div>
-                        </div>
+                <div className="flex-inbox">
+                    <div className="inputbox-details">
+                        <label htmlFor="First Name"> First Name </label>
+                        <input type="text" name="email" placeholder="Add a display Name" required />
                     </div>
 
-                    <div className="meeting-box">
-                        <div className="meeting-pic-box">
-                           <img className="meeting-pic" src="" alt="" />
-                           <img className="meeting-pic" src="" alt="" />
-                           <img className="meeting-pic" src="" alt="" />
-                        </div>
-                           
-                        <div className="upcoming-meeting">
-                            <span>Upcoming meetings</span>
-                            <span><ion-icon name="chevron-up-outline"></ion-icon></span>
-                        </div>
-
-                    </div>
-
-                    <div className="strategy-box">
-                        <div className="date">
-                            <span>12th Dec, 2023</span>
-                            <span>2.00PM - 4.00PM</span>
-                        </div>
-
-                        <div className="strategy-name">
-                            Quaterly Sales Stategy Review
-                        </div>
-                    </div>
-
-                    <div className="project-box">
-                        <div className="date">
-                            <span>12th Dec, 2023</span>
-                            <span>2.00PM - 4.00PM</span>
-                        </div>
-
-                        <div className="strategy-name">
-                            Quaterly Sales Stategy Review
-                        </div>
-                    </div>
-
-                    <div className="project-box">
-                        <div className="date">
-                            <span>12th Dec, 2023</span>
-                            <span>2.00PM - 4.00PM</span>
-                        </div>
-
-                        <div className="strategy-name">
-                            Quaterly Sales Stategy Review
-                        </div>
-                    </div>
-
-
-                    <div className="join-box">
-                        <button> <Link to="/custom">Join Room</Link> </button>
+                    <div className="inputbox-details">
+                        <label htmlFor="Last Name"> Last Name </label>
+                        <input type="text" name="email" placeholder="Add a display Name" required />
                     </div>
                 </div>
 
-                {/* ----- */}
-
-                <div className="first-row">
-
-                    <div className="top-discussion-box">
-                        <div className="picture"> <img src="" alt="" /></div>
-                        <div className="discussion-container">
-                            <div className="id-box">
-                                <span>ID: 1234 </span>
-                                <span className="icon">
-                                    <ion-icon name="refresh-circle-outline"></ion-icon>
-                                    <ion-icon name="duplicate-outline"></ion-icon>
-                                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-                                </span>
-                            </div>
-                            <div className="discussion"> UX Group Discussion</div>
-                        </div>
+                <div className="flex-inbox">
+                    <div className="inputbox-details">
+                        <label htmlFor="Phone Number"> Phone Number </label>
+                        <input type="number" name="email" placeholder="Add a display Name" required />
                     </div>
 
-                    <div className="meeting-box">
-                        <div className="meeting-pic-box">
-                           <img className="meeting-pic" src="" alt="" />
-                           <img className="meeting-pic" src="" alt="" />
-                           <img className="meeting-pic" src="" alt="" />
-                        </div>
-                           
-                        <div className="upcoming-meeting">
-                            <span>Upcoming meetings</span>
-                            <span><ion-icon name="chevron-up-outline"></ion-icon></span>
-                        </div>
-
-                    </div>
-
-                    <div className="strategy-box">
-                        <div className="date">
-                            <span>12th Dec, 2023</span>
-                            <span>2.00PM - 4.00PM</span>
-                        </div>
-
-                        <div className="strategy-name">
-                            Quaterly Sales Stategy Review
-                        </div>
-                    </div>
-
-                    <div className="join-box">
-                        <button><Link to="/custom">Join Room</Link> </button>
+                    <div className="inputbox-details">
+                        <label htmlFor="Email"> Email </label>
+                        <input type="email" name="email" placeholder="Add a display Name" required />
                     </div>
                 </div>
 
+            </div>
+
+            <div className="account-footer-content">
+
+                <div className="account-footer-text">
+                    <p style={{ fontWeight: "600" }}>Change Password</p>
+                </div>
+
+                <div className="account-footer-text">
+                    <button> Change Password </button>
+                </div>
             </div>
 
         </div>

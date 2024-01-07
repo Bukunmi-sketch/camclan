@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Leftbar from './components/leftbar';
-import Header from './components/header';
+// import Header from './components/header';
 import Middle from './components/middle';
 import './css/left.css';
 import './css/app.css'
@@ -16,6 +16,7 @@ import Nav from './components/nav';
 import Landing from './pages/landing';
 import Homenav from './components/homenav';
 import Signin from './pages/signin';
+import Account from './components/account';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -93,7 +94,7 @@ function App() {
             <main>
               <div className="container">
                 <Leftbar />
-                <Middle />
+                <Account />
               </div>
             </main>
           </>

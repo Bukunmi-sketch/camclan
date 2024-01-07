@@ -5,13 +5,14 @@
 
 
 main .container .left{
-    height:max-content;
+    /* height:max-content; */
     position: sticky;
     top:0; 
     background-color:white;
     border:3px solid transparent;
     border-radius: 3px;
     border-right: unset;
+    height:100vh;
     /* left: 0; */
     /* margin: 0; */
 }

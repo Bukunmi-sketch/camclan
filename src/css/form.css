@@ -17,6 +17,9 @@
   
   .flex-inbox {
     display: flex;
+    max-width: 70%;
+    gap: 15px;
+    margin-top: 10px;
   }
 
   .textbox{
