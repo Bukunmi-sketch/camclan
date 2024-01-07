@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,900;1,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Josefin+Sans:ital,wght@0,200;0,500;0,600;0,700;1,500&family=Lato:ital,wght@0,100;0,300;0,400;0,900;1,700;1,900&family=Montserrat:wght@100;200;400;600;700;900&family=Mukta:wght@200;300;500;700;800&family=Nunito+Sans:ital,wght@0,200;0,400;0,600;0,800;1,400;1,800&family=Poppins:ital,wght@0,100;0,400;0,600;0,900;1,500&family=Prompt:wght@100;300;500;600;700;800&display=swap');
+
+
+:root {
+    --color-dark: #241e38;
+    ;
+    --color-light: #f0eef6;
+    --color-gray: #9e98b3;
+    --color-primary: #C9E027;
+    --color-secondary: #d6ccff;
+    --color-danger: #fb5151;
+    --color-black: #000;
+    --color-success: #51fb51;
+    --color-white: #ffffff;
+
+
+    --page-header-bgColor: #242e42;
+    --page-header-bgColor-hover: #1d2636;
+    --page-header-txtColor: #dde9f8;
+    --page-header-headingColor: #7889a4;
+    --page-header-width: 220px;
+    --page-content-bgColor: #f0f1f6;
+    --page-content-txtColor: #171616;
+    --page-content-blockColor: #fff;
+    --blue: #00b9eb;
+
+    --border-radius: 4px;
+    --card-border-radius: 5px;
+    --btn-padding: 10px 25px;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+
+    --border-color: #fff;
+
+    --font-lato: "lato", sans-serif;
+    --font-poppins: "poppins", sans-serif;
+    --font-ubuntu: 'ubuntu', sans-serif
+}
+
+
+
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+body {
+    /* font-family: 'Varela', sans-serif; */
+    font-family: 'poppins', sans-serif;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 0.8em;
+}
+
+h3,
+b {
+    font-weight: light;
+}
+
+html,
+button,
+input {
+    /* font-family: 'Varela', sans-serif; */
+    font-family: 'poppins', sans-serif;
+}
+
+nav {
+    width: 100%;
+    background-color: white;
+    /* background-color: #093963; */
+    /* padding: 1rem 0; */
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    border: 1px solid transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    height:60px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    /* height: 55px; */
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid transparent;
+    width: 15%;
+}
+
+nav .contact{
+    display: flex;
+
+}
+
+nav .contact span:first-child{
+    padding:10px 50px;
+    margin-bottom:0;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size:0.9em;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight:600;
+    color: black;
+    align-items: center;
+}
+
+nav .contact span:last-child{
+    padding:10px 50px;
+    /* margin-top:10px; */
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 0.9em;
+    text-align: center;
+    background-color: var(--color-primary);
+    cursor: pointer;
+    font-weight:600;
+    color: black;
+    align-items: center;
+}
+
+.mainbody {
+    margin-top: 55px;
+    border: 1px solid transparent;
+    padding: 55px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.mainbody h3 {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.middle-text{
+    width: 80%;
+}
+
+.auth-button {
+    margin-top: 1em;
+
+}
+
+.auth-button .c button:first-child {
+    padding:10px 50px;
+    margin-bottom:0;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: var(--color-primary);
+    cursor: pointer;
+    font-weight:600;
+    color: black;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.auth-button button:last-child {
+    padding:10px 50px;
+    margin-bottom:0;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid #cecece;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    font-weight:600;
+    color: black;
+    align-items: center;
+}
+
+
+.invite-room {
+    margin-top: 50px;
+    padding:20px;
+    background-color: white;
+    border: 1px solid #cecece;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+}
+
+.invite-room label{
+    font-weight: 600;
+    font-size:1.2em;
+    margin-bottom: 5px;
+}
+
+.input {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid transparent;
+    width: 100%;
+}
+
+.input input[type=text]{
+    margin-right: 20px;
+    width: 70%;
+}
+
+.input button{
+    padding:12px 20px;
+    margin-top:-10px;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid #cecece;
+    font-size: 0.8em;
+    text-align: center;
+    background-color:transparent;
+    cursor: pointer;
+    font-weight:600;
+    color: black;
+    align-items: center;
+}

@@ -1,0 +1,276 @@
+
+.middle-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    width: 100%;
+    height: max-content;
+    margin-top: 10px;
+}
+
+.box{
+    border: 1px solid transparent;
+    width: 20%;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    box-shadow: 0 0 15px #cecece;
+}
+
+.boxa{
+    border:1px solid transparent;
+    width:20%;
+    height:100px;
+    background-color: green;
+}
+
+.boxb{
+    border:1px solid transparent;
+    width:80%;
+     height:100px;
+}
+
+.boxb h4{
+    width:100%;
+    margin-top: 10px;
+    font-size:0.9em;
+    text-align: center;
+}
+
+.box p{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ------ROOMS ----- */
+.rooms{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid transparent;
+    align-items: center;
+    height:50px;
+}
+
+.rooms .spanroom{
+    font-weight:bold;
+}
+
+.createroom{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid transparent;
+    padding: 10px;
+    width:20%;
+    align-items: center;
+}
+
+/* ----------------- for train dashboard -------- */
+
+
+.dashboard-middle-content{
+    display: flex;
+    justify-content:space-between;
+    border: 1px solid transparent;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    /* border-radius: 10px; */
+    padding:5px;
+}
+
+.dashboardbox{
+    border: 1px solid transparent;
+    
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    /* background-color: blanchedalmond; */
+    border-radius: 10px;
+    /* box-shadow: 0  20px  blanchedalmond; */
+}
+
+.dashboardbox span{
+    font-weight: bold;
+}
+
+
+.second-middle-content{
+    /* background-color: ; */
+    /* padding: 10px; */
+    margin-top:5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    border: 1px solid transparent;
+}
+
+.first-row{
+  background-color: white;
+  padding:10px;
+  border-radius: 5px;
+  border: 1px solid #cecece;
+  margin-left:15px ;
+  height: fit-content;
+}
+
+.top-discussion-box{
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+}
+
+.discussion-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.discussion-container .id-box{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    border: 1px solid transparent;
+}
+
+.discussion{
+    font-weight: bold;
+    /* margin-top: 5px; */
+}
+
+.picture{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 1px solid green;
+}
+
+.meeting-box{
+  padding: 10px;
+  border-top: 1px solid #cecece;
+}
+
+.meeting-pic-box{
+    display: flex;
+}
+
+.meeting-pic{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 1px solid green;
+}
+
+.upcoming-meeting{
+    display: flex;
+    border-bottom: 1px solid #cecece;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    margin-top:20px;
+}
+
+.strategy-box{
+    margin-top: 15px;
+    padding:20px;
+    background-color: #F7FEFF;
+    border:1px solid #cecece;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+}
+
+.strategy-name{
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.date{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    font-size:0.8em;
+}
+
+.join-box{
+    margin-top:35px;
+}
+
+.join-box button{
+    background-color: transparent;
+    border: 1px solid #3B8C11;
+    padding: 10px 30px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.project-box{
+    margin-top: 15px;
+    padding:20px;
+    background-color: #FCFDF4;
+    border:1px solid #cecece;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    
+}
+
+/* -----------For manage--------------- */
+
+/* .another-middle-content{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid transparent;
+    width: 100%;
+    height: max-content;
+    margin-top: 10px;
+    background-color: #f1f1f1;
+} */
+
+
+
+@media screen and (max-width:500px){
+    .middle-content{
+        flex-wrap:nowrap;
+        flex-direction: column;
+    }
+
+    .another-middle-content{
+        flex-wrap:nowrap;
+        flex-direction: column;
+    }
+
+    .dashboard-middle-content{
+        flex-wrap:nowrap;
+        flex-direction: column;
+    }
+
+    .dashboardbox{
+        width:95%;
+    }
+    
+    .bots{
+        width:90%;
+    }
+
+    .box{
+        width: 80%;
+    }
+
+    .trainbox{
+        width:90%;
+    }
+
+
+}    

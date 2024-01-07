@@ -1,0 +1,280 @@
+body {
+    font-family: 'poppins', sans-serif;
+    background-color:#f2f2f2;
+    overflow-x: hidden;
+    text-decoration: none;
+ }
+ 
+ html,
+ button,
+ input,
+ label {
+    font-family: 'poppins', sans-serif;
+    font-size:0.9em;
+ }
+ 
+ * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+ }
+ 
+ 
+ .auth-container {
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid green;
+ }
+ 
+ .subb-container {
+    margin:10px auto 30px ;
+    width: 100%;
+    max-width:60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid transparent;
+    box-shadow: 0 0 10px #cecece;
+    background-color:white;
+    /* padding: 0 0 50px 0; */
+    /* padding: 10px 30px 30px 30px; */
+    border-radius: 10px;
+ }
+ 
+ 
+ .logobox {
+    color: white;
+    /* border: 1px solid brown; */
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+    justify-content: flex-start;
+    align-items:flex-start;
+    margin-top:50px 10px 0 10px;
+    /* background-color: #030303; */
+ }
+
+ .logobox h3{
+   font-weight: 600;
+   color: black;
+ }
+
+ .logobox p{
+   font-size: 1.1em;
+   color: black;
+ }
+ 
+ .subb-container .sub-logo {
+    top: 0;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid transparent;
+    padding: 100px;
+ }
+ 
+ 
+ 
+ .sub-container .text {
+    font-size:1em;
+    font-weight: bold;
+    margin: 0 0 0 0;
+    color: white;
+ }
+ 
+ 
+ .login-content {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* padding: 5px 35px 0; */
+    border: 1px solid transparent;
+    margin: 0 0 0 0px;
+    text-align: center;
+    align-items: center;
+    background-color:#FAFAFA;
+    padding: 10px 30px 30px 30px;
+    border-radius: 0  10px 10px 0;
+ }
+
+ 
+ 
+ 
+ #show {
+    color: black;
+    border-radius: 4px;
+    width: 5%;
+    height: 15px;
+    margin: 20px 0 0 0;
+    right: 50px;
+    position: absolute;
+ }
+
+ .before {
+   margin:1px 0 0 0px;
+}
+
+.or {
+   text-align: center;
+   display: flex;
+   color: black;
+   margin: 0 0 0 0;
+   font-size: 1.1rem;
+}
+
+p:before,
+p:after {
+   border-bottom: 1px solid #cecece;
+   margin: auto;
+   content: " ";
+   width: 100%;
+   flex: 3;
+}
+ 
+ 
+ .forgetbox {
+    margin: 40px 0 0 0;
+    display: flex;
+    border: 1px solid transparent;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 0.8em;
+ }
+ 
+ .forget {
+    color: blue;
+    font-weight: bold;
+    align-items: center;
+    font-size: 0.8em;
+ }
+ 
+ a {
+    text-decoration: none;
+    color: black;
+    font-weight: light;
+ }
+ 
+ 
+ .error {
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 8px 8px;
+    color: #721624;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    /* color:red; */
+    text-align: center;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: none;
+ }
+ 
+ .error p {
+    align-items: center;
+    color: #721624;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: none;
+ }
+ 
+
+ .before {
+    margin: 20px 0 0 0px;
+ }
+ 
+ .or {
+    text-align: center;
+    display: flex;
+    color: black;
+    margin: 0 0 0 0;
+    font-size: 1.1rem;
+ }
+ 
+ p:before,
+ p:after {
+    border-bottom: 1px solid #cecece;
+    margin: auto;
+    content: " ";
+    width: 100%;
+    flex: 3;
+ }
+ 
+
+ @media screen and (max-width:992px) {
+
+   #sm-logobox{
+      display:none;
+   }
+
+   .sub-container {
+      flex-direction: column;
+      background-color: white;
+   }
+
+
+}
+
+ @media screen and (max-width:500px) {
+ 
+    .container {
+       border-top: 1px solid #f2f2f2;
+       height:100vh;
+       border: 1px solid transparent;
+    }
+ 
+    .subb-container {
+       flex-direction: column;
+       margin-top:unset;
+       /* height: 450px; */
+       max-width: 500px;
+       width: 100%;
+       border-radius: 0;
+       box-shadow: none;
+    
+    }
+ 
+    .logobox {
+       width: 100%;
+       height: 50px;
+    }
+ 
+ 
+    .sub-container .sub-logo {
+       top: 10px;
+    }
+ 
+    .logoo {
+       width: 100%;
+ 
+    }
+
+ 
+    .footer {
+       background: white;
+       color: black;
+       font-size: 0.8em;
+       width: 100%;
+       height: 100px;
+       margin-top: 0;
+       padding: 0;
+    }
+ 
+ 
+ 
+    .footer p {
+       color: grey;
+       font-size: 0.8em;
+    }
+ 
+ 
+ }
