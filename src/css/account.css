@@ -20,6 +20,18 @@
     border: 1px solid transparent;
 }
 
+/* --- general info------------------ */
+
+.general-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.general-info span:first-child{
+    font-weight: 600;
+}
+
 
 /* ----------------- for dashboard -------- */
 

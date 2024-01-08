@@ -29,7 +29,7 @@ function Account() {
                 <div className="createroom">
                     <span> <ion-icon name="grid"></ion-icon></span>
                     <span><ion-icon name="list-outline"></ion-icon></span>
-                    <button className="editbtn"><ion-icon name="add-outline"></ion-icon> Create Room</button>
+                    <button className="createbtn"><ion-icon name="add-outline"></ion-icon> Create Room</button>
                 </div>
             </div>
 
@@ -37,7 +37,7 @@ function Account() {
 
                 <div className="general-info">
                     <span>General Information</span>
-                    <span><button>Edit</button></span>
+                    <span><button className='createbtn'>Edit</button></span>
                 </div>
 
                 <div className="display-pic">
@@ -82,7 +82,7 @@ function Account() {
                 </div>
 
                 <div className="account-footer-text">
-                    <button> Change Password </button>
+                    <button className='createbtn'> Change Password </button>
                 </div>
             </div>
 

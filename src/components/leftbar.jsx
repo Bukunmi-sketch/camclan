@@ -15,12 +15,12 @@ function Leftbar() {
             <h3 className={ `${currentPageName == 'dashboard' ? 'h3-active' : 'just-h3'} ` }> Dashboard</h3>
           </Link>
 
-          <Link to="/webinars" className={ `${currentPageName == 'webinars' ? 'menu-item-active' : 'menu-item'} ` }>
+          <Link to="/webinar" className={ `${currentPageName == 'webinar' ? 'menu-item-active' : 'menu-item'} ` }>
             <ion-icon name={ currentPageName === 'webinars' ? 'grid' : 'grid-outline'} ></ion-icon>
             <h3 className={ `${currentPageName == 'webinars' ? 'h3-active' : 'just-h3'} ` }> Webinar (SFU) </h3>
           </Link>
 
-          <Link to="/meetings" className={ `${currentPageName == 'meetings' ? 'menu-item-active' : 'menu-item'} ` }>
+          <Link to="/meeting" className={ `${currentPageName == 'meeting' ? 'menu-item-active' : 'menu-item'} ` }>
             <ion-icon name={ currentPageName === 'meetings' ? 'grid' : 'grid-outline'} ></ion-icon>
             <h3 className={ `${currentPageName == 'meetings' ? 'h3-active' : 'just-h3'} ` }> Meetings (p2p) </h3>
           </Link>

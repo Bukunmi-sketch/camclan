@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Leftbar from './components/leftbar';
 // import Header from './components/header';
@@ -19,25 +19,30 @@ import Signin from './pages/signin';
 import Account from './components/account';
 
 function App() {
-  // const [count, setCount] = useState(0)
+
+  const [showJoinRoom, setShowJoinRoom] = useState(false);
+
+  const toggleShowJoinRoom = () => {
+    setShowJoinRoom(!showJoinRoom);
+  };
 
   return (
     <>
       <BrowserRouter>
         <Routes>
 
-        <Route path='/' element={
-          <>
-          <Nav/>
-          <Landing/>
-          </>
+          <Route path='/' element={
+            <>
+              <Nav />
+              <Landing />
+            </>
           } />
 
           <Route path='/signin' element={
-          <>
-          <Nav/>
-          <Signin/>
-          </>
+            <>
+              <Nav />
+              <Signin />
+            </>
           } />
 
           <Route path='/dashboard' element={
@@ -52,17 +57,39 @@ function App() {
             </>
           } />
 
-          <Route path='/sfu' element={
+          <Route path='/webinar' element={
             <>
               <Homenav />
-              <Leftbar />
+              <main>
+                <div className="container">
+                  <Leftbar />
+                  <Custom />
+                </div>
+              </main>
             </>
           } />
 
-          <Route path='/p2p' element={
+          <Route path='/meeting' element={
             <>
               <Homenav />
-              <Leftbar />
+              <main>
+                <div className="container">
+                  <Leftbar />
+                  <Custom />
+                </div>
+              </main>
+            </>
+          } />
+
+          <Route path='/one' element={
+            <>
+              <Homenav />
+              <main>
+                <div className="container">
+                  <Leftbar />
+                  <Custom />
+                </div>
+              </main>
             </>
           } />
 
@@ -72,8 +99,8 @@ function App() {
               <main>
                 <div className="container">
                   <Leftbar />
-                  <Modal />
-                  <Custom />
+                  <Custom toggleShowJoinRoom={toggleShowJoinRoom} />
+                  {showJoinRoom ? <Modal toggleShowJoinRoom={toggleShowJoinRoom}  /> : ""}
                 </div>
               </main>
             </>
@@ -88,16 +115,16 @@ function App() {
           } />
 
 
-         <Route path='/account' element={
+          <Route path='/account' element={
             <>
-            <Homenav />
-            <main>
-              <div className="container">
-                <Leftbar />
-                <Account />
-              </div>
-            </main>
-          </>
+              <Homenav />
+              <main>
+                <div className="container">
+                  <Leftbar />
+                  <Account />
+                </div>
+              </main>
+            </>
           } />
 
           <Route path='/contact' element={

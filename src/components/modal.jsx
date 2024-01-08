@@ -3,18 +3,15 @@ import "../css/form.css";
 
 
 
-function Modal() {
+function Modal({toggleShowJoinRoom}) {
     return ( 
         <div className="modal"  id="popupContainer">
         <div className="modal-container">
-            <div className="modal-header">
-                <span><h4> NOTICE ! </h4></span>
-                <span className="close" >&times</span>
-            </div>
+            {/* <div className="modal-header"> </div> */}
 
             <div className="modal-content">
-
             <div className="form-details">
+            <span className="close" onClick={() => toggleShowJoinRoom()} >X</span>
                     <form action="#">
 
                         <div className="textbox">

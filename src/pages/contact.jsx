@@ -1,5 +1,8 @@
 import "../css/register.css";
 import { useState} from 'react';
+import logotext from '../assets/Vector.png'
+import logo from '../assets/Group.png'
+
 
 function Contact() {
     
@@ -15,9 +18,10 @@ function Contact() {
 
                 <div className="subb-container">
 
-                    <div className="logobox" id="sm-logobox">
+                <div className="logobox" id="sm-logobox">
                         <div className="sub-logo">
-                            <p className="logoo"> <ion-icon name="people-outline" ></ion-icon> </p>
+                        <img src={logo} alt="" />
+                        <img src={logotext} alt="" />
                         </div>
                     </div>
 

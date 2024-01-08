@@ -3,7 +3,7 @@
 
 .custom-room-box{
     background-color: white;
-    border: 1px solid #cecece;
+    border: 1px solid transparent;
     width: 100%;
     display: flex;
     justify-content: space-between;
