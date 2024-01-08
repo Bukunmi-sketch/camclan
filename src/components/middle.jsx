@@ -1,10 +1,57 @@
 import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import {  useNavigate } from "react-router-dom";
+
 function Middle() {
 
+    const [currentUser, setCurrentUser] = useState(undefined);
+  
+    const navigate = useNavigate();
 
-    // const centerStyle = {
-    //     textAlign: 'center'
-    // };
+
+    useEffect(() => {
+        async function checkLocalStorage() {
+          try {
+            if (!localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)) {
+              navigate("/login");
+            } else {
+              const userData = await JSON.parse(localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY));
+              setCurrentUser(userData);
+              console.log(userData);
+            }
+          } catch (error) {
+            console.error("Error while fetching user data:", error);
+            // Handle errors here
+          }
+        }
+      
+        checkLocalStorage();
+      }, [navigate, setCurrentUser]);
+      
+
+
+    // useEffect(async () => {
+    //     if (!localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)) {
+    //       navigate("/login");
+    //     } else {
+    //       setCurrentUser(
+    //         await JSON.parse(
+    //           localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)
+    //         )
+    //       );
+    //     }
+    //   }, []);
+      
+    //   useEffect(async () => {
+    //     if (currentUser) {
+    //       if (currentUser.isAvatarImageSet) {
+    //         const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
+    //         setContacts(data.data);
+    //       } else {
+    //         navigate("/setAvatar");
+    //       }
+    //     }
+    //   }, [currentUser]);
 
     return (
         <div className="middle">
@@ -12,7 +59,7 @@ function Middle() {
             <div className="dashboard-middle-content">
 
                 <div className="dashboardbox">
-                    <p>Welcome, <span> John Doe </span></p>
+                    <p>Welcome, <span> {currentUser.fullname}</span></p>
                 </div>
 
                 <div className="dashboardbox">

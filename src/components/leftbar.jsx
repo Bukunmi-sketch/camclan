@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function Leftbar() {
+function Leftbar( {toggleShowLogout} ) {
 
     const currentPageName = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
 
@@ -55,9 +55,9 @@ function Leftbar() {
 
         </div>
     
-        <div className="upgrade">
+        <div className="upgrade" onClick={() => toggleShowLogout()}>
         <ion-icon name={currentPageName === 'support' ? 'log-out' : 'log-out-outline'}></ion-icon>
-        <h3 className={ `${currentPageName == 'support' ? 'h3-active' : 'just-h3'} ` }> Log Out </h3>
+        <h3 className={ `${currentPageName == 'support' ? 'h3-active' : 'just-h3'} ` } > Log Out </h3>
           {/* <button>
             <Link to="/subscribe" style={{ color: 'black' }}>
               <span>Upgrade</span>

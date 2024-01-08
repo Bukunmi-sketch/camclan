@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Leftbar from './components/leftbar';
 // import Header from './components/header';
@@ -17,14 +17,55 @@ import Landing from './pages/landing';
 import Homenav from './components/homenav';
 import Signin from './pages/signin';
 import Account from './components/account';
+import Logout from './components/logout';
+import { Video } from '@stream-io/video-react-sdk';
+import { useState} from 'react';
+import Videoo from './pages/videoo';
+
+
+
 
 function App() {
 
   const [showJoinRoom, setShowJoinRoom] = useState(false);
+  const [showLogout, setShowLogout] = useState(false);
+  // const [currentUser, setCurrentUser] = useState(undefined);
+  
 
   const toggleShowJoinRoom = () => {
     setShowJoinRoom(!showJoinRoom);
   };
+
+  const toggleShowLogout = () => {
+    setShowLogout(!showLogout);
+  };
+
+
+ 
+
+  // useEffect(async () => {
+  //   if (!localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)) {
+  //     navigate("/login");
+  //   } else {
+  //     setCurrentUser(
+  //       await JSON.parse(
+  //         localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)
+  //       )
+  //     );
+  //   }
+  // }, []);
+  
+  // useEffect(async () => {
+  //   if (currentUser) {
+  //     if (currentUser.isAvatarImageSet) {
+  //       const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
+  //       setContacts(data.data);
+  //     } else {
+  //       navigate("/setAvatar");
+  //     }
+  //   }
+  // }, [currentUser]);
+
 
   return (
     <>
@@ -93,14 +134,25 @@ function App() {
             </>
           } />
 
+        <Route path='/video' element={
+            <>
+              <Homenav />
+              <Videoo/>
+            </>
+          } />
+
+
+
           <Route path='/custom' element={
             <>
               <Homenav />
               <main>
                 <div className="container">
-                  <Leftbar />
+                  <Leftbar toggleShowLogout={toggleShowLogout} />
                   <Custom toggleShowJoinRoom={toggleShowJoinRoom} />
                   {showJoinRoom ? <Modal toggleShowJoinRoom={toggleShowJoinRoom}  /> : ""}
+                  {showLogout ? <Logout toggleShowLogout={toggleShowLogout}  /> : ""}
+                  
                 </div>
               </main>
             </>

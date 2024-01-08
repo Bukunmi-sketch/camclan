@@ -1,25 +1,29 @@
 import '../css/modal.css';
 
 
+import "../css/logout.css";
 
-function Modal() {
+
+function Logout({toggleShowLogout}) {
     return (
         <div className="modal" id="popupContainer">
             <div className="modal-container">
                 <div className="modal-header">
                     {/* <span><h4> NOTICE ! </h4></span> */}
-                    <span className="close" >X</span>
                 </div>
 
                 <div className="modal-content">
 
-                    <div className="danger-icon"></div>
-                    <span className="h3">Leaving So Soon ?</span>
-                    <span className="text">Are you sure you want to log out ?</span>
-                    <div className="logout-box">
-                        <button>Cancel</button>
-                        <button>Logout</button>
+                    <div className="logout-form">
+                        <div className="danger-icon"><ion-icon name="alert-circle-outline"></ion-icon></div>
+                        <span className="h3">Leaving So Soon ?</span>
+                        <span className="text">Are you sure you want to log out ?</span>
+                        <div className="logout-box">
+                            <button onClick={() => toggleShowLogout()}>Cancel</button>
+                            <button>Logout</button>
+                        </div>
                     </div>
+
 
 
                 </div>
@@ -30,4 +34,4 @@ function Modal() {
     );
 }
 
-export default Modal;
+export default Logout;
