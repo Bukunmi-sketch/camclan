@@ -2,9 +2,30 @@ import '../css/modal.css';
 
 
 import "../css/logout.css";
+import Cookies from 'js-cookie'
+import {  useNavigate } from "react-router-dom";
+import { usertoken } from '../utils/APIRoutes';
+
+
 
 
 function Logout({toggleShowLogout}) {
+
+    const navigate= useNavigate();
+
+    const handleLogout = () => {
+        Cookies.remove("zoom")
+         navigate('/');
+         console.log("clear")
+      };
+
+    // const handleLogout = () => {
+    //     localStorage.removeItem(usertoken);
+    //     navigate('/');
+    //     // Other logout actions, such as redirecting to a login page
+    //   };
+ 
+
     return (
         <div className="modal" id="popupContainer">
             <div className="modal-container">
@@ -20,7 +41,7 @@ function Logout({toggleShowLogout}) {
                         <span className="text">Are you sure you want to log out ?</span>
                         <div className="logout-box">
                             <button onClick={() => toggleShowLogout()}>Cancel</button>
-                            <button>Logout</button>
+                            <button onClick={handleLogout}>Logout</button>
                         </div>
                     </div>
 

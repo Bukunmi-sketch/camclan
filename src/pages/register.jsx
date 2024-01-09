@@ -6,8 +6,10 @@ import logo from '../assets/Group.png';
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useLocalStorage from "../hooks/uselocalstorage";
 // import { v4 as uuidv4 } from "uuid";
-import { registerRoute } from "../utils/APIRoutes";
+import { registerRoute,usertoken } from "../utils/APIRoutes";
+import Cookies from 'js-cookie'
 
 function Register() {
     
@@ -35,11 +37,14 @@ function Register() {
     // confirmPassword: "",
   });
 
-  useEffect(() => {
-    if (localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)) {
-      navigate("/dashboard");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)) {
+  //     navigate("/dashboard");
+  //   }
+  // }, []);
+
+
+
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -59,10 +64,6 @@ function Register() {
 
   const handleValidation = () => {
     const { password,fullname, email } = values;
-    // if (password !== confirmPassword) {
-    //   toast.error( "Password and confirm password should be same.", toastOptions );
-    //   return false;
-    // } else 
     if (fullname.length < 3) {
       toast.error( "Username should be greater than 3 characters.", toastOptions );
       return false;
@@ -93,19 +94,29 @@ function Register() {
   
         if (data.message === 'The email existed in the system') {
           toast.error(data.message, toastOptions);
+          setIsLoading(false);
         } else if (data.message === 'Cannot create your account, please try again') {
           toast.error(data.message, toastOptions);
+          setIsLoading(false);
         } else if (data.message === 'Please input required fields') {
           toast.error(data.message, toastOptions);
+          setIsLoading(false);
         } else {
-          localStorage.setItem(
-            import.meta.env.REACT_APP_LOCALHOST_KEY,
-            JSON.stringify(data)
-          );
+          Cookies.set("zoom", encodeURIComponent(JSON.stringify(data)), { expires: 7, path: '/' });
+
+          // localStorage.setItem(
+          //   usertoken,
+          //   JSON.stringify(data)
+          // );
+          // Cookies.set(import.meta.env.REACT_APP_TOKEN_KEY, `${data}`, { expires: 1 });
+          // navigate(`home`);
           setIsLoading(false);
           navigate("/dashboard");
+
+        
         }
       } catch (error) {
+        setIsLoading(false);
         console.error("Error:", error);
         toast.error("An error occurred. Please try again.", toastOptions);
       }

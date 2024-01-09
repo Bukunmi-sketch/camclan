@@ -6,13 +6,15 @@ import logotext from '../assets/Vector.png'
 import logo from '../assets/Group.png'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { loginRoute } from "../utils/APIRoutes";
+import { loginRoute, usertoken } from "../utils/APIRoutes";
+import Cookies from 'js-cookie'
 
 
 function Login() {
     
     const navigate = useNavigate();
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
@@ -27,9 +29,10 @@ function Login() {
     theme: "dark",
   };
 
+
   useEffect(() => {
-    if (localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)) {
-      navigate("/");
+    if (Cookies.get(import.meta.env.REACT_APP_LOCALHOST_KEY)) {
+      navigate("/dashboard");
     }
   }, []);
 
@@ -51,22 +54,24 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     if (validateForm()) {
       const { email, password } = values;
       const { data } = await axios.post(loginRoute, {
         email,
         password,
       });
-      if (data.status === false) {
-        toast.error(data.msg, toastOptions);
+      console.log(data.data);
+      if (data.success == false) {
+        toast.error(data.message, toastOptions);
+        console.log(data.success);
+        setIsLoading(false);
       }
-      if (data.status === true) {
-        localStorage.setItem(
-          import.meta.env.REACT_APP_LOCALHOST_KEY,
-          JSON.stringify(data.user)
-        );
-
-        navigate("/");
+      if (data.success === true) {
+        console.log(data);
+        Cookies.set("zoom", encodeURIComponent(JSON.stringify(data.data)), { expires: 7, path: '/' });
+       navigate("/dashboard");
+       setIsLoading(false);
       }
     }
   };
@@ -111,7 +116,7 @@ function Login() {
                            
                             <div className="buttonbox-details">
                                 {/* <button className="submit" name="login"> <Link to="/dashboard"><p> Continue </p></Link> </button> */}
-                                <button className="submit" name="login">Continue</button>
+                                <button className="submit" name="login"> {isLoading ? "loading..." : <p> Continue </p> }</button>
                             </div>
 
                             <div className="before">

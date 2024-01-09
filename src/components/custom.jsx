@@ -1,6 +1,6 @@
 import '../css/custom.css';
 
-function Custom({ toggleShowJoinRoom }) {
+function Custom({ toggleShowJoinRoom, toggleShowCreateRoom }) {
 
 
     const products = [
@@ -67,7 +67,7 @@ function Custom({ toggleShowJoinRoom }) {
                 <div className="createroom">
                     <span> <ion-icon name="grid"></ion-icon></span>
                     <span><ion-icon name="list-outline"></ion-icon></span>
-                    <button className="createbtn"><ion-icon name="add-outline"></ion-icon> Create Room</button>
+                    <button className="createbtn" onClick={() => toggleShowCreateRoom()}><ion-icon name="add-outline"></ion-icon> Create Room</button>
                 </div>
             </div>
 

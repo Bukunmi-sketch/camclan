@@ -18,9 +18,12 @@ import Homenav from './components/homenav';
 import Signin from './pages/signin';
 import Account from './components/account';
 import Logout from './components/logout';
-import { Video } from '@stream-io/video-react-sdk';
-import { useState} from 'react';
+// import {  Link, useNavigate } from "react-router-dom";
+// import { Video } from '@stream-io/video-react-sdk';
+import { useState,useEffect} from 'react';
+import CreateRoom from './components/createroom';
 import Videoo from './pages/videoo';
+import Zego from './pages/zego';
 
 
 
@@ -29,6 +32,8 @@ function App() {
 
   const [showJoinRoom, setShowJoinRoom] = useState(false);
   const [showLogout, setShowLogout] = useState(false);
+  const [showCreateRoom, setShowCreateRoom] = useState(false);
+  // const navigate = useNavigate();
   // const [currentUser, setCurrentUser] = useState(undefined);
   
 
@@ -40,31 +45,9 @@ function App() {
     setShowLogout(!showLogout);
   };
 
-
- 
-
-  // useEffect(async () => {
-  //   if (!localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)) {
-  //     navigate("/login");
-  //   } else {
-  //     setCurrentUser(
-  //       await JSON.parse(
-  //         localStorage.getItem(import.meta.env.REACT_APP_LOCALHOST_KEY)
-  //       )
-  //     );
-  //   }
-  // }, []);
-  
-  // useEffect(async () => {
-  //   if (currentUser) {
-  //     if (currentUser.isAvatarImageSet) {
-  //       const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
-  //       setContacts(data.data);
-  //     } else {
-  //       navigate("/setAvatar");
-  //     }
-  //   }
-  // }, [currentUser]);
+  const toggleShowCreateRoom = () => {
+    setShowCreateRoom(!showCreateRoom);
+  };
 
 
   return (
@@ -92,7 +75,10 @@ function App() {
               <main>
                 <div className="container">
                   <Leftbar />
-                  <Middle />
+                  <Middle toggleShowJoinRoom={toggleShowJoinRoom} toggleShowCreateRoom={toggleShowCreateRoom} />
+                  {showJoinRoom ? <Modal toggleShowJoinRoom={toggleShowJoinRoom}  /> : ""}
+                  {showLogout ? <Logout toggleShowLogout={toggleShowLogout}  /> : ""}
+                  {showCreateRoom ? <CreateRoom toggleShowCreateRoom={toggleShowCreateRoom}  /> : ""}
                 </div>
               </main>
             </>
@@ -103,8 +89,11 @@ function App() {
               <Homenav />
               <main>
                 <div className="container">
-                  <Leftbar />
-                  <Custom />
+                  <Leftbar toggleShowLogout={toggleShowLogout} />
+                  <Custom toggleShowJoinRoom={toggleShowJoinRoom} toggleShowCreateRoom={toggleShowCreateRoom} />
+                  {showJoinRoom ? <Modal toggleShowJoinRoom={toggleShowJoinRoom}  /> : ""}
+                  {showLogout ? <Logout toggleShowLogout={toggleShowLogout}  /> : ""}
+                  {showCreateRoom ? <CreateRoom toggleShowCreateRoom={toggleShowCreateRoom}  /> : ""}
                 </div>
               </main>
             </>
@@ -115,24 +104,42 @@ function App() {
               <Homenav />
               <main>
                 <div className="container">
-                  <Leftbar />
-                  <Custom />
+                 <Leftbar toggleShowLogout={toggleShowLogout} />
+                  <Custom toggleShowJoinRoom={toggleShowJoinRoom} toggleShowCreateRoom={toggleShowCreateRoom} />
+                  {showJoinRoom ? <Modal toggleShowJoinRoom={toggleShowJoinRoom}  /> : ""}
+                  {showLogout ? <Logout toggleShowLogout={toggleShowLogout}  /> : ""}
+                  {showCreateRoom ? <CreateRoom toggleShowCreateRoom={toggleShowCreateRoom}  /> : ""}
                 </div>
               </main>
             </>
           } />
+
+
+
+
 
           <Route path='/one' element={
             <>
               <Homenav />
               <main>
                 <div className="container">
-                  <Leftbar />
-                  <Custom />
+                <Leftbar toggleShowLogout={toggleShowLogout} />
+                  <Custom toggleShowJoinRoom={toggleShowJoinRoom} toggleShowCreateRoom={toggleShowCreateRoom} />
+                  {showJoinRoom ? <Modal toggleShowJoinRoom={toggleShowJoinRoom}  /> : ""}
+                  {showLogout ? <Logout toggleShowLogout={toggleShowLogout}  /> : ""}
+                  {showCreateRoom ? <CreateRoom toggleShowCreateRoom={toggleShowCreateRoom}  /> : ""}
                 </div>
               </main>
             </>
           } />
+
+{/* <Route path='/zego' element={
+            <>
+              <Homenav />
+              <Zego/>
+            </>
+          } /> */}
+
 
         <Route path='/video' element={
             <>
@@ -149,9 +156,10 @@ function App() {
               <main>
                 <div className="container">
                   <Leftbar toggleShowLogout={toggleShowLogout} />
-                  <Custom toggleShowJoinRoom={toggleShowJoinRoom} />
+                  <Custom toggleShowJoinRoom={toggleShowJoinRoom} toggleShowCreateRoom={toggleShowCreateRoom} />
                   {showJoinRoom ? <Modal toggleShowJoinRoom={toggleShowJoinRoom}  /> : ""}
                   {showLogout ? <Logout toggleShowLogout={toggleShowLogout}  /> : ""}
+                  {showCreateRoom ? <CreateRoom toggleShowCreateRoom={toggleShowCreateRoom}  /> : ""}
                   
                 </div>
               </main>
